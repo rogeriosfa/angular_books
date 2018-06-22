@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MaterializeModule } from 'angular2-materialize';
+import { ListBooksComponent } from './modules/list-books/list-books.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListBooksComponent
   ],
   imports: [
     BrowserModule,

@@ -8,12 +8,12 @@ import { Observable, of } from "rxjs";
 export class DbService {
     constructor() { }
 
-    public getBooks(): Observable<Book[]> {
-        const listBooks: Book[] = [];
-        listBooks.push(
-            { id: 1, name: "Um Conta da Vida", pagination: 210, author: "Pedro Alves" },
-            { id: 2, name: "Mentes Milionárias", pagination: 518, author: "Joaquina Silva M." }
-        );
-        return of(listBooks);
+    public listBooks: Book[] = [
+        { id: 1, name: "Um Conta da Vida", pagination: 210, author: "Pedro Alves" },
+        { id: 2, name: "Mentes Milionárias", pagination: 518, author: "Joaquina Silva M." }
+    ];
+
+    public getBooks(): Observable<Book[]> {       
+        return of(this.listBooks);
     }
 }

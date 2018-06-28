@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { Book } from '../models';
+import { Injectable } from "@angular/core";
+import { Book } from "../models";
+import { Observable, of } from "rxjs";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: "root"
 })
 export class DbService {
-
     constructor() { }
 
-    public getBooks(): Book[] {
-        var listBooks: Book[] = [];
-        for (let index = 1; index < 10; index++) {
-            let book = new Book(index, 'Book - ' + index, index * 84, 'Dr. Roger - ' + index);
-            listBooks.push(book);
-        }
-        return listBooks;
+    public getBooks(): Observable<Book[]> {
+        const listBooks: Book[] = [];
+        listBooks.push(
+            { id: 1, name: "Um Conta da Vida", pagination: 210, author: "Pedro Alves" },
+            { id: 2, name: "Mentes Milionárias", pagination: 518, author: "Joaquina Silva M." }
+        );
+        return of(listBooks);
     }
 }

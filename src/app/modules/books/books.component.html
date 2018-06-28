@@ -1,0 +1,31 @@
+<div class="row margin-t-20">
+    <div class="col s10 offset-s1">
+
+        <div class="right-align">
+            <a routerLink="new" class="waves-effect waves-light btn">Add</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Author</th>
+                    <th>Book Name</th>
+                    <th>Nº Pg</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let book of lists">
+                    <td>{{book?.id}}</td>
+                    <td>{{book?.author}}</td>
+                    <td>{{book?.name}}</td>
+                    <td>{{book?.pagination}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

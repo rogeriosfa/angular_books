@@ -1,20 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { MaterializeModule } from 'angular2-materialize';
-import { ListBooksComponent } from './modules/list-books/list-books.component';
+import { BooksComponent } from './modules/books/books.component';
+import { HomeComponent } from './modules/home/home.component';
+import { BookNewComponent } from 'src/app/modules/books/book-new.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListBooksComponent
-  ],
-  imports: [
-    BrowserModule,
-    MaterializeModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        BooksComponent,
+        BookNewComponent,
+    ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        MaterializeModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

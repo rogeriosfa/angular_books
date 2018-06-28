@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -17,6 +18,7 @@ import { BookNewComponent } from 'src/app/modules/books/book-new.component';
         BookNewComponent,
     ],
     imports: [
+        FormsModule,
         AppRoutingModule,
         BrowserModule,
         MaterializeModule

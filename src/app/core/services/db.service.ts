@@ -16,4 +16,9 @@ export class DbService {
     public getBooks(): Observable<Book[]> {       
         return of(this.listBooks);
     }
+
+    public addBook(book: Book) {
+        this.listBooks.push(book);
+        return of(true);
+    }
 }

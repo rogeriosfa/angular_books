@@ -13,12 +13,20 @@ export class DbService {
         { id: 2, name: "Mentes Milionárias", pagination: 518, author: "Joaquina Silva M." }
     ];
 
-    public getBooks(): Observable<Book[]> {       
+    public getBooks(): Observable<Book[]> {
         return of(this.listBooks);
     }
 
     public addBook(book: Book) {
         this.listBooks.push(book);
+        return of(true);
+    }
+
+    public removeBook(book: Book) {
+        let b = this.listBooks.indexOf(book);
+        if (this.listBooks.indexOf(book) > -1)
+            this.listBooks.splice(b, 1);
+
         return of(true);
     }
 }

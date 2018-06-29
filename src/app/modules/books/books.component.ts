@@ -30,8 +30,16 @@ export class BooksComponent implements OnInit {
         );
     }
 
-    public removeBook() {
+    public removeBook(book: Book) {
         //implementando
+        this.dbService.removeBook(book).subscribe(
+            result => {
+                console.log('sucesso na remoção.');
+            },
+            erro => {
+                alert('um erro ocorreu na remoção.');
+            }
+        )
     }
 
 }

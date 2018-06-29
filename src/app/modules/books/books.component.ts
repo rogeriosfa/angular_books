@@ -30,4 +30,8 @@ export class BooksComponent implements OnInit {
         );
     }
 
+    public removeBook() {
+        //implementando
+    }
+
 }
